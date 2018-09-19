@@ -12,5 +12,64 @@
     <p>Ciao e benvenuti nel mio magico sito!</p>
     <img src="http://www.starcoppe.it/images/grafica-immagine-b.jpg"/>
   </body>
+  
+<script>
+
+var chars     =["","","","","","","","","","    ","","","","\n","\n","","shift","ctrl","alt","pause/break","caps","","","","","","","esc","","","",""," ","pg up","pg down","end","home","","","","","","","","","insert","delete","","0","1","2","3","4","5","6","7","8","9","","","","","","","","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]; 
+var shiftChars=["","","","","","","","","","    ","","","","","\n","\n","shift","ctrl","alt","pause/break","caps","","","","","","","esc","","","",""," ","pg up","pg down","end","home","","","","","","","","","insert","delete","",")","!","@","#","$","%","^","&","*","(","","","","","","","","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""]; 
+
+var shift = false;
+var boxSelected = false;
+var Text = "";
+var textBox = function(x,y,width){
+    if(shift){
+       
+            Text = Text.substring(0,Text.length-6);
+            Text+=shiftChars[keyCode];
+            shift = false;
+            
+    }
+    if(Text.substring(Text.length-6,Text.length-1)==="shift"&&!keyIsPressed){
+        shift = true;
+    }
+    keyPressed = function() { 
+        
+            if(keyCode === 37||keyCode ===  8){
+                Text = Text.substring(0,Text.length-1);
+            }
+            if(keyCode===188){
+                Text+=","; 
+                
+            } else if(keyCode===190){
+                Text+="."; 
+                
+            } else{
+                Text+=chars[keyCode];
+            } 
+    }; 
+
+            fill(255, 255, 255);
+            rect(x,y,width,22);
+        
+        fill(0, 0, 0);
+        text(Text.substring(Text.length-width/5.5,Text.length),x+5,y+16);
+        if(mouseIsPressed){
+            if(mouseX>x&&mouseY>y&&mouseX<x+width&&mouseY<y+22){ 
+            boxSelected = true;
+            } else{
+                boxSelected = false;
+            }
+        }
+        if(boxSelected){
+            line(x+5,y+2,x+5,y+20);
+           
+        }
+};
+var draw = function() {
+    background(255, 255, 255);
+    textBox(89,198,150);
+};
+
+</script>
 </html>
     
