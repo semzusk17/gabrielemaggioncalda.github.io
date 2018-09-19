@@ -14,11 +14,11 @@
   </body>
   <script>
 var password = "Password";
-var a = prompt("Scrivi la password corretta per accedere!",0);    
+var a = prompt("Scrivi la password corretta per accedere!","password");    
 if (a == password) {
     alert("Password esatta! Benvenuto in questo sito!");
 } else {
-    alert("Password sbagliata! Ritenta!");
+    prompt("Password sbagliata! Ritenta!","password");
 }
 </script>
 
