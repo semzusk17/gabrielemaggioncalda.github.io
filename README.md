@@ -2,9 +2,7 @@
 
 <!DOCTYPE html>
 <html>
- <script>
-<input name="mioTesto" type="text" value="qui il tuo testo" size="40" maxlength="200" />
- </script>
+<input type=”text”>
   <head>
     <title>benvenuti su questo sito!!</title>
     <style>
