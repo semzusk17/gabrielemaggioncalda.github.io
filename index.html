@@ -6,8 +6,13 @@
   <button type= "button" value= "Accedi al sito!" onClick= "accedi()" size= 100/>
  </form>
  <script>
-  var function accedi() {
-   if (document.getElementById("password").value== "0000") window.open(https://gabrielemaggioncalda.github.io/")
+  function accedi() {
+   if (document.getElementById("password").value== "0000") {
+   window.open(https://gabrielemaggioncalda.github.io/");
+   alert("Benvenuto/a nel sito!");
+   } else {
+   alert("password sbagliata! Riprova!");
+  }
   }
                                                                       
  </script>
