@@ -2,7 +2,9 @@
 
 <!DOCTYPE html>
 <html>
+  <form>
 <input type=”text”>
+  </form>
   <head>
     <title>benvenuti su questo sito!!</title>
     <style>
